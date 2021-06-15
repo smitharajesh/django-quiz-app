@@ -50,7 +50,7 @@
 	{% endfor %}
 
   </ul>
-  	<input value={% trans "Verify" %} class="btn btn-large btn-block btn-warning" id="verifyAnswer">
+  	<input type="button" value={% trans "Verify" %} class="btn btn-large btn-block btn-warning" id="verifyAnswer">
     {% if progress.0|add:1 == progress.1 %}
     <input type="submit" value={% trans "Submit" %} class="btn btn-large btn-block btn-warning" >
     {% else %}
