@@ -23,3 +23,14 @@ def correct_answer_for_all(context, question):
 @register.filter
 def answer_choice_to_string(question, answer):
     return question.answer_choice_to_string(answer)
+
+# This is the method used to split the string and convert it to integer
+@register.filter(name='split')
+def split(str, key):
+    split_str = str.split(key)
+    result = []
+    for n in split_str:
+        if n != "":
+            result.append(int(n))
+    print(list(result))
+    return list(result)

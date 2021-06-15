@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38578610-12"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-38578610-12');
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'UA-38578610-12');
 </script>
 {% load i18n %}
 {% block title %}
@@ -15,12 +16,25 @@
 <h2>{{ quiz.title }}</h2>
 <h3>{% trans "Category" %}: {{ quiz.category }}</h3>
 {% if quiz.single_attempt %}
-  <h4>{% trans "You will only get one attempt at this quiz" %}.</h4>
+<h4>{% trans "You will only get one attempt at this quiz" %}.</h4>
 {% endif %}
 <p>{{ quiz.description }}</p>
+
+<div class="div-container">
+
+  <div class="div-left">
+    <p>Question format:</p>
+    <img src="{% static 'images/question.png' %}" width="90%" height="100%" />
+  </div>
+  <div class="div-left">
+    <p>Verification demo</p>
+    <img src="{% static 'images/verify.png' %}" width="90%" height="100%" />
+  </div>
+
+</div>
 <p>
-  <a href="{% url 'quiz_question' quiz_name=quiz.url %}">
-	{% trans "Start quiz" %}
+  <a class="btn btn-large btn-block btn-primary button" href="{% url 'quiz_question' quiz_name=quiz.url %}">
+    {% trans "Start quiz" %}
   </a>
 </p>
 {% endblock %}

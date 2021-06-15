@@ -25,6 +25,8 @@ SECRET_KEY = 'q^n4^0*8v2f9%qs$+hg7l0g!-461fja26bzq=cwp)y3u&k6i8&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Set debug to false when user gets an error.
+
 ALLOWED_HOSTS = ['how-am-i-doing.qxf2.com','localhost']
 
 
@@ -120,4 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+MEDIA_URL = '/images/'
+
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR, "static")
+]

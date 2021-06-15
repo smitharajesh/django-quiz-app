@@ -225,6 +225,7 @@ class QuizTake(FormView):
         self.sitting.remove_first_question()
 
     def final_result_user(self):
+        progress, c = Progress.objects.get_or_create(user=self.request.user)
         results = {
             'quiz': self.quiz,
             'score': self.sitting.get_current_score,
@@ -232,7 +233,11 @@ class QuizTake(FormView):
             'percent': self.sitting.get_percent_correct,
             'sitting': self.sitting,
             'previous': self.previous,
+            'exams' : progress.show_exams(),
+            'questions' : self.sitting.get_questions(),
         }
+
+        print(self.sitting);
 
         self.sitting.mark_quiz_complete()
 

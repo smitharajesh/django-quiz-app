@@ -452,7 +452,7 @@ class Sitting(models.Model):
         Returns a list of non empty integers, representing the pk of
         questions
         """
-        return [int(q) for q in self.incorrect_questions.split(',') if q]
+        return [int(q) for q in self.incorrect_questions if q]
 
     def remove_incorrect_question(self, question):
         current = self.get_incorrect_questions
