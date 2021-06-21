@@ -13,10 +13,8 @@ th {
 td {
   background-color: #f5f8fb;
   padding: 3px;
-  text-align: left;
+  text-align: center;
 }
-
-
 
 .div-container {
   display: flex;
@@ -59,6 +57,7 @@ td {
   border-spacing: 0 4px;
   border: 0px;
   margin-bottom: 50px;
+  /* width: fit-content; */
 }
 
 .hoverTable tr:nth-child(even) {
@@ -77,16 +76,19 @@ th {
   -moz-box-shadow: 2px 4px 2px 0 #0e86d4;
   -webkit-box-shadow: 2px 4px 2px 0 #0e86d4;
   box-shadow: 2px 4px 2px 0 #0e86d4;
+  cursor: pointer;
 }
 
 .clickable-row:hover td:first-child {
   -moz-box-shadow: 2px 4px 2px 0 #0e86d4;
   -webkit-box-shadow: 2px 4px 2px 0 #0e86d4;
   box-shadow: 2px 4px 2px 0 #0e86d4;
+  cursor: pointer;
 }
 
 .clickable-row:hover td:last-child {
   -moz-box-shadow: 2px 4px 2px 0 #0e86d4;
   -webkit-box-shadow: 2px 4px 2px 0 #0e86d4;
   box-shadow: 2px 4px 2px 0 #0e86d4;
+  cursor: pointer;
 }
