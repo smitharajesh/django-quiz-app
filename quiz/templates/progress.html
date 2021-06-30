@@ -40,7 +40,7 @@
 
 
 		{% for cat, value in cat_scores.items %}
-		{% if cat in 'Assessment,Task Breakdown' %}
+		{% if cat in 'Assessment,Trello Update,Jira Update,Effective Planning,Work Breakdown,Demo,General' %}
 		<tr>
 			<td>{{ cat }}</td>
 			<td>{{ value.0 }}</td>
@@ -80,7 +80,7 @@
 
 
 		{% for cat, value in cat_scores.items %}
-		{% if cat in 'Trello Update,Trello/Jira Updates' %}
+		{% if cat in 'Task Breakdown,Trello/Jira Updates,Time Management,Others' %}
 		<tr>
 			<td>{{ cat }}</td>
 			<td>{{ value.0 }}</td>
